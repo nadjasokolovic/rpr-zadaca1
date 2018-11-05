@@ -11,6 +11,7 @@ public abstract class ChessPiece {
         this.pozicija = pozicija;
         this.boja = boja;
     }
+
     public abstract String getPosition();
     public abstract Color getColor();
     public abstract void move(String position);

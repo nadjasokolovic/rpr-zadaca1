@@ -1,16 +1,11 @@
 package ba.unsa.etf.rpr;
 
-public class King extends ChessPiece {
-
-    public King(String pozicija, Color boja) {
-        /*if(pozicija.charAt(0) < 'A' || pozicija.charAt(0) > 'H' || Character.getNumericValue(pozicija.charAt(1)) < 1 || Character.getNumericValue(pozicija.charAt(1)) > 8)
-            throw new IllegalArgumentException("Neispravni parametri");
-        this.pozicija = pozicija;
-        this.boja = boja;*/
+public class Bishop extends ChessPiece {
+    public Bishop(String pozicija, Color boja) {
         super(pozicija, boja);
     }
 
-    private boolean pomjeraLiLijevoDesno(String poz1, String poz2) {
+    private boolean lijevoDesno(String poz1, String poz2) {
         String poz11 = new String();
         poz11 = poz1.toUpperCase();
         String poz22 = new String();
@@ -20,7 +15,7 @@ public class King extends ChessPiece {
         return false;
     }
 
-    private boolean pomjeraLiGoreDole(String poz1, String poz2) {
+    private boolean goreDole(String poz1, String poz2) {
         String poz11 = new String();
         poz11 = poz1.toUpperCase();
         String poz22 = new String();
@@ -52,22 +47,9 @@ public class King extends ChessPiece {
         //ako je neispravan format, tj ide nesto sto nije slovo, pa onda nesto sto nije broj, ili samo jedno od ovoga
         if(!(pomocni.charAt(0) >= 'A' && pomocni.charAt(0) <= 'Z') || !(Character.getNumericValue(pomocni.charAt(1)) >= 1 || Character.getNumericValue(pomocni.charAt(1)) <= 9))
             throw new IllegalArgumentException("Neispravan format pozicije");
-        //ako je pozicija neodgovarajuca za kralja
-        //1. ako pomjera lijevo-desno
-        if(pomjeraLiLijevoDesno(pomocniThis, pomocni)) {
-            if(pomocni.charAt(0) < pomocniThis.charAt(0) - 1 || pomocni.charAt(0) > pomocniThis.charAt(0) + 1)
-                throw new IllegalArgumentException("Kralj se moze kretati samo za jedno mjesto");
-        }
-        if(pomjeraLiGoreDole(pomocniThis, pomocni)) {
-            if(pomocni.charAt(1) < pomocniThis.charAt(0) - 1 || pomocni.charAt(0) > pomocniThis.charAt(0) + 1)
-                throw new IllegalArgumentException("Kralj se moze kretati samo za jedno mjesto");
-        }
-        if(!pomjeraLiGoreDole(pomocniThis, pomocni) && !pomjeraLiLijevoDesno(this.getPosition(), position)) {
-            //znaci dijagonalno sto nikako ne moze za kralja
-            throw new IllegalArgumentException("Kralj se ne moze kretati dijagonalno");
-        }
+        if(goreDole(this.pozicija, position) || lijevoDesno(this.pozicija, position))
+            throw new IllegalArgumentException("Lovac ne ne moze kretati u ovom smjeru");
+
         this.pozicija = position;
-
     }
-
 }

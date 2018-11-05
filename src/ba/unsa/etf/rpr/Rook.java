@@ -6,13 +6,21 @@ public class Rook extends ChessPiece {
     }
 
     private boolean lijevoDesno(String poz1, String poz2) {
-        if(poz1.charAt(1) == poz2.charAt(1))
+        String poz11 = new String();
+        poz11 = poz1.toUpperCase();
+        String poz22 = new String();
+        poz22 = poz2.toUpperCase();
+        if(poz11.charAt(1) == poz22.charAt(1))
             return true;
         return false;
     }
 
     private boolean goreDole(String poz1, String poz2) {
-        if(poz1.charAt(0) == poz2.charAt(0))
+        String poz11 = new String();
+        poz11 = poz1.toUpperCase();
+        String poz22 = new String();
+        poz22 = poz2.toUpperCase();
+        if(poz11.charAt(0) == poz22.charAt(0))
             return true;
         return false;
     }
