@@ -31,16 +31,6 @@ public class King extends ChessPiece {
     }
 
     @Override
-    public String getPosition() {
-        return this.pozicija;
-    }
-
-    @Override
-    public Color getColor() {
-        return boja;
-    }
-
-    @Override
     public void move(String position) {
         //pozicija van table
         String pomocni = new String(position);

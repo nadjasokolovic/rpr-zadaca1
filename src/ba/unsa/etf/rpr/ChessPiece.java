@@ -12,7 +12,7 @@ public abstract class ChessPiece {
         this.boja = boja;
     }
 
-    public abstract String getPosition();
-    public abstract Color getColor();
+    public String getPosition() { return this.pozicija; }
+    public Color getColor() { return boja; }
     public abstract void move(String position);
 }

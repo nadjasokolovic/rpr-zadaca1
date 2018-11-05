@@ -26,16 +26,6 @@ public class Bishop extends ChessPiece {
     }
 
     @Override
-    public String getPosition() {
-        return this.pozicija;
-    }
-
-    @Override
-    public Color getColor() {
-        return boja;
-    }
-
-    @Override
     public void move(String position) {
         //pozicija van table
         String pomocni = new String(position);
@@ -47,7 +37,7 @@ public class Bishop extends ChessPiece {
         //ako je neispravan format, tj ide nesto sto nije slovo, pa onda nesto sto nije broj, ili samo jedno od ovoga
         if(!(pomocni.charAt(0) >= 'A' && pomocni.charAt(0) <= 'Z') || !(Character.getNumericValue(pomocni.charAt(1)) >= 1 || Character.getNumericValue(pomocni.charAt(1)) <= 9))
             throw new IllegalArgumentException("Neispravan format pozicije");
-        if(goreDole(this.pozicija, position) || lijevoDesno(this.pozicija, position))
+        if(goreDole(pomocniThis, pomocni) || lijevoDesno(pomocniThis, pomocni))
             throw new IllegalArgumentException("Lovac ne ne moze kretati u ovom smjeru");
 
         this.pozicija = position;

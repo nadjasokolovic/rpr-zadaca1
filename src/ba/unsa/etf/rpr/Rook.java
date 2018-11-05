@@ -31,17 +31,6 @@ public class Rook extends ChessPiece {
         return false;
     }
 
-
-    @Override
-    public String getPosition() {
-        return this.pozicija;
-    }
-
-    @Override
-    public Color getColor() {
-        return boja;
-    }
-
     @Override
     public void move(String position) {
         //pozicija van table
@@ -55,7 +44,7 @@ public class Rook extends ChessPiece {
         if(!(pomocni.charAt(0) >= 'A' && pomocni.charAt(0) <= 'Z') || !(Character.getNumericValue(pomocni.charAt(1)) >= 1 || Character.getNumericValue(pomocni.charAt(1)) <= 9))
             throw new IllegalArgumentException("Neispravan format pozicije");
         //neispravno kretanje je dijagonalno
-        if(dijagonalno(this.pozicija, position))
+        if(dijagonalno(pomocniThis, pomocni))
             throw new IllegalArgumentException("Top se ne moze kretati dijagonalno");
 
         this.pozicija = position;
