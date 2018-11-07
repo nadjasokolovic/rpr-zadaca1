@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
 import java.util.ArrayList;
+import ba.unsa.etf.rpr.ChessPiece.Color;
 
 public class Board {
     private ArrayList<ChessPiece> figure;
@@ -49,4 +50,6 @@ public class Board {
     public void move(Class type, ChessPiece.Color color, String position) {
 
     }
+
+    public boolean isCheck(Color color) { return true; }
 }

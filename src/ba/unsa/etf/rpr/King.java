@@ -53,8 +53,15 @@ public class King extends ChessPiece {
                 throw new IllegalChessMoveException("Kralj se moze kretati samo za jedno mjesto");
         }
         if(!pomjeraLiGoreDole(pomocniThis, pomocni) && !pomjeraLiLijevoDesno(this.getPosition(), position)) {
-            //znaci dijagonalno sto nikako ne moze za kralja
-            throw new IllegalChessMoveException("Kralj se ne moze kretati dijagonalno");
+            //znaci dijagonalno
+            //ako je dalje od jedne pozicije lijevo ili jedne pozicije desno
+            if(pomocni.charAt(0) != (pomocniThis.charAt(0) - 1) || pomocni.charAt(0) != (pomocniThis.charAt(0) + 1))
+                throw new IllegalChessMoveException("Kralj se mora kretati samo za jedno mjesto");
+            else if(pomocni.charAt(0) == (pomocniThis.charAt(0) - 1) || pomocni.charAt(0) == (pomocniThis.charAt(0) + 1)) {
+            //slovo je ok, provjerava da li je broj ok
+                if(Character.getNumericValue(pomocni.charAt(1)) != Character.getNumericValue(pomocniThis.charAt(1)) + 1 || Character.getNumericValue(pomocni.charAt(1)) != Character.getNumericValue(pomocni.charAt(1)) - 1)
+                    throw new IllegalChessMoveException("Kralj se mora kretati samo za jedno mjesto");
+            }
         }
         this.pozicija = position;
 
