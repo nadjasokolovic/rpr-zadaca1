@@ -38,7 +38,7 @@ public class Bishop extends ChessPiece {
         if(!(pomocni.charAt(0) >= 'A' && pomocni.charAt(0) <= 'Z') || !(Character.getNumericValue(pomocni.charAt(1)) >= 1 || Character.getNumericValue(pomocni.charAt(1)) <= 9))
             throw new IllegalArgumentException("Neispravan format pozicije");
         if(goreDole(pomocniThis, pomocni) || lijevoDesno(pomocniThis, pomocni))
-            throw new IllegalArgumentException("Lovac ne ne moze kretati u ovom smjeru");
+            throw new IllegalChessMoveException("Lovac ne ne moze kretati u ovom smjeru");
 
         this.pozicija = position;
     }

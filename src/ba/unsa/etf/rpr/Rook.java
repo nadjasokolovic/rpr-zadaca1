@@ -45,7 +45,7 @@ public class Rook extends ChessPiece {
             throw new IllegalArgumentException("Neispravan format pozicije");
         //neispravno kretanje je dijagonalno
         if(dijagonalno(pomocniThis, pomocni))
-            throw new IllegalArgumentException("Top se ne moze kretati dijagonalno");
+            throw new IllegalChessMoveException("Top se ne moze kretati dijagonalno");
 
         this.pozicija = position;
     }

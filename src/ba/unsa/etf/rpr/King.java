@@ -46,15 +46,15 @@ public class King extends ChessPiece {
         //1. ako pomjera lijevo-desno
         if(pomjeraLiLijevoDesno(pomocniThis, pomocni)) {
             if(pomocni.charAt(0) < pomocniThis.charAt(0) - 1 || pomocni.charAt(0) > pomocniThis.charAt(0) + 1)
-                throw new IllegalArgumentException("Kralj se moze kretati samo za jedno mjesto");
+                throw new IllegalChessMoveException("Kralj se moze kretati samo za jedno mjesto");
         }
         if(pomjeraLiGoreDole(pomocniThis, pomocni)) {
             if(pomocni.charAt(1) < pomocniThis.charAt(0) - 1 || pomocni.charAt(0) > pomocniThis.charAt(0) + 1)
-                throw new IllegalArgumentException("Kralj se moze kretati samo za jedno mjesto");
+                throw new IllegalChessMoveException("Kralj se moze kretati samo za jedno mjesto");
         }
         if(!pomjeraLiGoreDole(pomocniThis, pomocni) && !pomjeraLiLijevoDesno(this.getPosition(), position)) {
             //znaci dijagonalno sto nikako ne moze za kralja
-            throw new IllegalArgumentException("Kralj se ne moze kretati dijagonalno");
+            throw new IllegalChessMoveException("Kralj se ne moze kretati dijagonalno");
         }
         this.pozicija = position;
 
