@@ -6,6 +6,27 @@ import ba.unsa.etf.rpr.ChessPiece.Color;
 public class Board {
     private ArrayList<ChessPiece> figure;
 
+    private boolean provjeraIspravnosti(String position) {
+        //pozicija van table
+        String pomocni = new String(position);
+        pomocni.toUpperCase();
+        if(pomocni.charAt(0) < 'A' || pomocni.charAt(0) > 'H' || Character.getNumericValue(pomocni.charAt(1)) < 1 || Character.getNumericValue(pomocni.charAt(1)) > 8)
+            return false;
+        //ako je neispravan format, tj ide nesto sto nije slovo, pa onda nesto sto nije broj, ili samo jedno od ovoga
+        if(!(pomocni.charAt(0) >= 'A' && pomocni.charAt(0) <= 'Z') || !(Character.getNumericValue(pomocni.charAt(1)) >= 1 || Character.getNumericValue(pomocni.charAt(1)) <= 9))
+            return false;
+
+        return true;
+    }
+
+    private boolean trebaLiPojestiFiguru(ArrayList<ChessPiece> figure, String pozicija, ChessPiece.Color boja) {
+        for(ChessPiece jednaFigura : figure) {
+            if(jednaFigura.getPosition().equals(pozicija) && !jednaFigura.getColor().equals(boja))
+                return true;
+        }
+        return false;
+    }
+
     public Board() {
         figure = new ArrayList<>();
         figure.add(new King("D8", ChessPiece.Color.BLACK));
@@ -48,7 +69,29 @@ public class Board {
     }
 
     public void move(Class type, ChessPiece.Color color, String position) {
-
+        if(!provjeraIspravnosti(position))
+            throw new IllegalArgumentException("Neispravna pozicija");
+        int kraj = 0;
+        for(ChessPiece jednaFigura : figure) {
+            if(jednaFigura.getClass() == type && jednaFigura.getColor().equals(color)) {
+                try {
+                    jednaFigura.move(position);
+                    //provjeriti je li pojela neku figuru
+                    if(trebaLiPojestiFiguru(figure, position, color)) {
+                        for(ChessPiece f : figure) {
+                            if (f.getPosition().equals(position)) {
+                                figure.remove(f);
+                                break;
+                            }
+                        }
+                    }
+                } catch (IllegalChessMoveException izuzetak) {
+                    if(kraj == figure.size() - 1)
+                        throw new IllegalChessMoveException("Nema niti jedna figura za koju je pozicija ispravna");
+                }
+            }
+            kraj++;
+        }
     }
 
     public boolean isCheck(Color color) { return true; }

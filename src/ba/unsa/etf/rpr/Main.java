@@ -1,5 +1,8 @@
 package ba.unsa.etf.rpr;
 
+import java.util.List;
+import java.util.ArrayList;
+
 public class Main {
      public static void main(String[] args) {
     	System.out.println("Potrebno je napraviti neki uvodni kod koji realizira igru šaha. Program neće imati neki korisnički interfejs, pošto to nije fokus u ovom trenutku. Pošto nismo radili vještačku inteligenciju, neće biti ni moguće igrati protiv računara. Zanemarićemo i neka od pravila same igre kako bi zadatak bio jednostavniji, kao što su: rokada, razmjena pijuna za druge figure, mat itd.\n" +
@@ -35,5 +38,12 @@ public class Main {
                 "ispravno imenovanje paketa, klasa, metoda i promjenljivih,\n" +
                 "primjenu komentara,\n" +
                 "atomic commits.\n");
+    	List<Integer> lista = new ArrayList<>();
+    	lista.add(5); lista.add(10); lista.add(15);
+    	for(Integer obj : lista) {
+    	   Integer i = new Integer(obj);
+    	   System.out.printf("%d %d ****", i, obj);
+        }
+
     }
 }
