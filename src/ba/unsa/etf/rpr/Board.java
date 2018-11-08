@@ -36,6 +36,16 @@ public class Board {
         return false;
     }
 
+    private ChessPiece getFiguruNaPoziciji(String pozicija) {
+        ChessPiece returnPiece = null;
+        for(ChessPiece f : figure) {
+            if(f.getPosition().equals(pozicija))
+                returnPiece = f;
+                break;
+        }
+        return returnPiece;
+    }
+
     private String kojiJeSmjerKretanja(String trenutnaPozicija, String odredisnaPozicija) {
         String s = new String();
         if(trenutnaPozicija.charAt(0) == odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) < Character.getNumericValue(odredisnaPozicija.charAt(1)))
@@ -243,6 +253,34 @@ public class Board {
         }
     }
 
+    public void move(String oldPosition, String newPosition) {
+        if(!imaLiFiguraNaPoziciji(oldPosition))
+            throw new IllegalArgumentException("Na ovoj poziciji nema figure");
+        ChessPiece figuraNaStarojPoziciji = getFiguruNaPoziciji(oldPosition);
+        if(!(figuraNaStarojPoziciji instanceof Knight || figuraNaStarojPoziciji instanceof King) && daLiJeBlokirana(oldPosition, newPosition, kojiJeSmjerKretanja(oldPosition, newPosition)))
+            throw new IllegalChessMoveException("Ova figura je blokirana drugim figurama");
+        try {
+            figuraNaStarojPoziciji.move(newPosition);
+            //provjeriti je li pojela neku figuru
+            if(trebaLiPojestiFiguru(figure, newPosition, figuraNaStarojPoziciji.getColor())) {
+                for(ChessPiece f : figure) {
+                    if (f.getPosition().equals(newPosition)) {
+                        //provjeriti da li je na ovoj pozicijji figura iste boje
+                        if(f.getColor().equals(figuraNaStarojPoziciji.getColor()))
+                            throw new IllegalChessMoveException("Na odredisnoj poziciji je figura iste boje");
+                        //ako nije iste boje treba je pojesti
+                        figure.remove(f);
+                        break;
+                    }
+                }
+            }
+        } catch (IllegalChessMoveException izuzetak) {
+            System.out.println(izuzetak.getMessage());
+        }
 
-    public boolean isCheck(Color color) { return true; }
+    }
+
+    public boolean isCheck(Color color) {
+        
+    }
 }
