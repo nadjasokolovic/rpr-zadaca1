@@ -1,6 +1,7 @@
 package ba.unsa.etf.rpr;
 
-import java.util.ArrayList;
+import java.util.*;
+
 import ba.unsa.etf.rpr.ChessPiece.Color;
 
 public class Board {
@@ -25,6 +26,138 @@ public class Board {
                 return true;
         }
         return false;
+    }
+
+    private boolean imaLiFiguraNaPoziciji(String position) {
+        for(ChessPiece f : figure) {
+            if(f.getPosition().equals(position))
+                return true;
+        }
+        return false;
+    }
+
+    private String kojiJeSmjerKretanja(String trenutnaPozicija, String odredisnaPozicija) {
+        String s = new String();
+        if(trenutnaPozicija.charAt(0) == odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) < Character.getNumericValue(odredisnaPozicija.charAt(1)))
+            s += "gore";
+        else if(trenutnaPozicija.charAt(0) == odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) > Character.getNumericValue(odredisnaPozicija.charAt(1)))
+            s += "dole";
+        else if(trenutnaPozicija.charAt(0) < odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) < Character.getNumericValue(odredisnaPozicija.charAt(1)))
+            s += "dijagonalno gore desno";
+        else if(trenutnaPozicija.charAt(0) > odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) < Character.getNumericValue(odredisnaPozicija.charAt(1)))
+            s += "dijagonalno gore lijevo";
+        else if(trenutnaPozicija.charAt(0) < odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) > Character.getNumericValue(odredisnaPozicija.charAt(1)))
+            s += "dijagonalno dole desno";
+        else if(trenutnaPozicija.charAt(0) > odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) > Character.getNumericValue(odredisnaPozicija.charAt(1)))
+            s += "dijagonalno dole lijevo";
+        else if(trenutnaPozicija.charAt(0) < odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) == Character.getNumericValue(odredisnaPozicija.charAt(1)))
+            s += "desno";
+        else if(trenutnaPozicija.charAt(0) > odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) == Character.getNumericValue(odredisnaPozicija.charAt(1)))
+            s += "lijevo";
+
+        return s;
+    }
+
+    private boolean daLiJeBlokirana(String pocetnaPozicija, String odredisnaPozicija, String smjer) {
+        boolean blokira = false;
+        char pocetnaSlovo = pocetnaPozicija.charAt(0);
+        int pocetnaBroj = Character.getNumericValue(pocetnaPozicija.charAt(1));
+        char odredisnaSlovo = odredisnaPozicija.charAt(0);
+        int odredisnaBroj = Character.getNumericValue(odredisnaPozicija.charAt(1));
+
+        if(smjer.equals("gore")) {
+            while(pocetnaBroj < odredisnaBroj) {
+                String poz = new String();
+                poz = pocetnaSlovo + Integer.toString(pocetnaBroj);
+                if(imaLiFiguraNaPoziciji(poz)) {
+                    blokira = true;
+                    break;
+                }
+                 pocetnaBroj++;
+            }
+        }
+        else if(smjer.equals("dole")) {
+            while(pocetnaBroj > odredisnaBroj) {
+                String poz = new String();
+                poz += pocetnaSlovo + Integer.toString(pocetnaBroj);
+                if(imaLiFiguraNaPoziciji(poz)) {
+                    blokira = true;
+                    break;
+                }
+                pocetnaBroj--;
+            }
+        }
+        else if(smjer.equals("lijevo")) {
+            while(pocetnaSlovo > odredisnaSlovo) {
+                String poz = new String();
+                poz = pocetnaSlovo + Integer.toString(pocetnaBroj);
+                if(imaLiFiguraNaPoziciji(poz)) {
+                    blokira = true;
+                    break;
+                }
+                pocetnaSlovo--;
+            }
+        }
+        else if(smjer.equals("desno")) {
+            while(pocetnaSlovo < odredisnaSlovo) {
+                String poz = new String();
+                poz = pocetnaSlovo + Integer.toString(pocetnaBroj);
+                if(imaLiFiguraNaPoziciji(poz)) {
+                    blokira = true;
+                    break;
+                }
+                pocetnaSlovo++;
+            }
+        }
+        else if(smjer.equals("dijagonalno gore desno")) {
+            while(pocetnaSlovo < odredisnaSlovo && pocetnaBroj < odredisnaBroj) {
+                String poz = new String();
+                poz = pocetnaSlovo + Integer.toString(pocetnaBroj);
+                if(imaLiFiguraNaPoziciji(poz)) {
+                    blokira = true;
+                    break;
+                }
+                pocetnaSlovo++;
+                pocetnaBroj++;
+            }
+        }
+        else if(smjer.equals("dijagonalno gore lijevo")) {
+            while(pocetnaSlovo > odredisnaSlovo && pocetnaBroj < odredisnaBroj) {
+                String poz = new String();
+                poz = pocetnaSlovo + Integer.toString(pocetnaBroj);
+                if(imaLiFiguraNaPoziciji(poz)) {
+                    blokira = true;
+                    break;
+                }
+                pocetnaSlovo--;
+                pocetnaBroj++;
+            }
+        }
+        else if(smjer.equals("dijagonalno dole lijevo")) {
+            while(pocetnaSlovo > odredisnaSlovo && pocetnaBroj > odredisnaBroj) {
+                String poz = new String();
+                poz = pocetnaSlovo + Integer.toString(pocetnaBroj);
+                if(imaLiFiguraNaPoziciji(poz)) {
+                    blokira = true;
+                    break;
+                }
+                pocetnaSlovo--;
+                pocetnaBroj--;
+            }
+        }
+        else if(smjer.equals("dijagonalno dole desno")) {
+            while(pocetnaSlovo < odredisnaSlovo && pocetnaBroj > odredisnaBroj) {
+                String poz = new String();
+                poz = pocetnaSlovo + Integer.toString(pocetnaBroj);
+                if(imaLiFiguraNaPoziciji(poz)) {
+                    blokira = true;
+                    break;
+                }
+                pocetnaSlovo++;
+                pocetnaBroj--;
+            }
+        }
+        return  blokira;
     }
 
     public Board() {
@@ -72,27 +205,44 @@ public class Board {
         if(!provjeraIspravnosti(position))
             throw new IllegalArgumentException("Neispravna pozicija");
         int kraj = 0;
+        boolean krajPetlje = false;
         for(ChessPiece jednaFigura : figure) {
             if(jednaFigura.getClass() == type && jednaFigura.getColor().equals(color)) {
                 try {
+                    //ovdje provjeriti da li je blokira neka, ako blokira ne igramo sa njom nego sa continue preskocimo na sljedecu iteraciju
+                    //figura.getPosition() je pocetna pozicija
+                    //position je krajnja pozicija
+                    if(!(jednaFigura instanceof Knight || jednaFigura instanceof King) && daLiJeBlokirana(jednaFigura.getPosition(), position, kojiJeSmjerKretanja(jednaFigura.getPosition(), position)))
+                        continue;
                     jednaFigura.move(position);
                     //provjeriti je li pojela neku figuru
                     if(trebaLiPojestiFiguru(figure, position, color)) {
                         for(ChessPiece f : figure) {
                             if (f.getPosition().equals(position)) {
+                                //provjeriti da li je na ovoj pozicijji figura iste boje
+                                if(f.getColor().equals(color))
+                                    throw new IllegalChessMoveException("Na odredisnoj poziciji je figura iste boje");
+                                //ako nije iste boje treba je pojesti
                                 figure.remove(f);
+                                krajPetlje = true;
                                 break;
                             }
                         }
                     }
                 } catch (IllegalChessMoveException izuzetak) {
+                    kraj++;
                     if(kraj == figure.size() - 1)
                         throw new IllegalChessMoveException("Nema niti jedna figura za koju je pozicija ispravna");
+                    continue;
                 }
             }
+            if(krajPetlje) break;
             kraj++;
+            if(kraj == figure.size() - 1)
+                throw new IllegalChessMoveException("Nema niti jedna figura za koju je pozicija ispravna");
         }
     }
+
 
     public boolean isCheck(Color color) { return true; }
 }

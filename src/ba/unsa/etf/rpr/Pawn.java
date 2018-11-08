@@ -17,7 +17,7 @@ public class Pawn extends ChessPiece {
         //zanemaruju se ostale figure, znaci on ne moze ici ni dijagonalno?
         if(pomocni.charAt(0) != pomocniThis.charAt(0) || Character.getNumericValue(pomocni.charAt(1)) != Character.getNumericValue(pomocniThis.charAt(1)) + 1)
             throw new IllegalChessMoveException("Neispravna pozicija za pijuna");
-        //provjeriti sta za prvi potez
+        //provjeriti sta za prvi potez i kad jede
         this.pozicija = position;
     }
 }

@@ -14,16 +14,28 @@ public abstract class ChessPiece {
         this.boja = boja;
     }
 
+    protected boolean pomjeraLiLijevoDesno(String poz1, String poz2) {
+        if(Character.getNumericValue(poz1.charAt(1)) == Character.getNumericValue(poz2.charAt(1)))
+            return true;
+
+        return false;
+    }
+
+    protected boolean pomjeraLiGoreDole(String poz1, String poz2) {
+        if(poz1.charAt(0) == poz2.charAt(0))
+            return true;
+
+        return false;
+    }
+
     public boolean provjeraIspravnostiPozicije(String position) {
         //pozicija van table
         String pomocni = new String(position);
         pomocni.toUpperCase();
-        String pomocniThis = new String(this.getPosition());
-        pomocniThis.toUpperCase();
         if(pomocni.charAt(0) < 'A' || pomocni.charAt(0) > 'H' || Character.getNumericValue(pomocni.charAt(1)) < 1 || Character.getNumericValue(pomocni.charAt(1)) > 8)
             return false;
         //ako je neispravan format, tj ide nesto sto nije slovo, pa onda nesto sto nije broj, ili samo jedno od ovoga
-        if(!(pomocni.charAt(0) >= 'A' && pomocni.charAt(0) <= 'Z') || !(Character.getNumericValue(pomocni.charAt(1)) >= 1 || Character.getNumericValue(pomocni.charAt(1)) <= 9))
+        if(!(pomocni.charAt(0) >= 'A' && pomocni.charAt(0) <= 'Z') || !(Character.getNumericValue(pomocni.charAt(1)) >= 1 && Character.getNumericValue(pomocni.charAt(1)) <= 9))
             return false;
 
         return true;
