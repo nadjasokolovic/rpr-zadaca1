@@ -17,7 +17,7 @@ public class Rook extends ChessPiece {
         if(!pomjeraLiLijevoDesno(pomocniThis, pomocni) && !pomjeraLiGoreDole(pomocniThis, pomocni))
             throw new IllegalChessMoveException("Top se ne moze kretati dijagonalno");
 
-        this.pozicija = position;
+        this.setPosition(position);
     }
 
 }

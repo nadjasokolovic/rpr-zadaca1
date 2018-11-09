@@ -36,7 +36,7 @@ public class King extends ChessPiece {
                     throw new IllegalChessMoveException("Kralj se mora kretati samo za jedno mjesto");
             }
         }
-        this.pozicija = position;
+        this.setPosition(position);
 
     }
 

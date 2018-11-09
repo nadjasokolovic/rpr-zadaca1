@@ -11,6 +11,6 @@ public class Queen extends ChessPiece {
             throw new IllegalArgumentException("Neispravna pozicija");
         //ako nije zadovoljen niti jedan od if-ova iznad onda nema neodgovarajuce pozicije za kraljicu, jer se ona krece u svim smjerovima i koliko god polja zeli
 
-        this.pozicija = position;
+        this.setPosition(position);
     }
 }

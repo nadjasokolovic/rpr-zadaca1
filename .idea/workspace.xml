@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="ac0f4174-d99e-4783-a22d-5c35be10275a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rpr-zadaca1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/rpr-zadaca1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/ChessPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Program.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Rook.java" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-924037318">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.0" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.open.time.46" value="2" />
+          <entry key="project.open.time.48" value="1" />
+          <entry key="project.open.time.9" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="java" value="95" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JAVA" value="95" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="13755" />
+          <entry key="txt" value="326" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="13755" />
+          <entry key="PLAIN_TEXT" value="326" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="rpr-zadaca1" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Program.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/ChessPiece.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="782">
+              <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Pawn.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#147#148#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/BoardTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="141">
+              <caret line="162" selection-start-line="162" selection-end-line="162" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Knight.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+              <folding>
+                <element signature="e#114#115#0" expanded="true" />
+                <element signature="e#151#152#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Board.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-547">
+              <caret line="249" column="73" selection-start-line="249" selection-start-column="73" selection-end-line="249" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/KingTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="816">
+              <caret line="66" selection-start-line="66" selection-end-line="66" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/King.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+              <folding>
+                <element signature="e#111#112#0" expanded="true" />
+                <element signature="e#148#149#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>imaLiFigura</find>
+      <find>is Check1</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/ChessPiese.java" />
+        <option value="$PROJECT_DIR$/src/IllegalChessMoveException.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/IllegalChessMoveException.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Bishop.java" />
+        <option value="$PROJECT_DIR$/test/ba/unsa/etf/rpr/BoardTest.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Pawn.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Queen.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Rook.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Knight.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/King.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/ChessPiece.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Main.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Board.java" />
+        <option value="$PROJECT_DIR$/src/ba/unsa/etf/rpr/Program.java" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="70" />
+    <option name="width" value="1750" />
+    <option name="height" value="970" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="rpr-zadaca1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpr-zadaca1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rpr-zadaca1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpr-zadaca1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rpr-zadaca1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpr-zadaca1" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="rpr" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rpr-zadaca1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpr-zadaca1" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="rpr-zadaca1" type="b2602c69:ProjectViewProjectNode" />
+              <item name="rpr-zadaca1" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="rpr" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541760055391" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Program">
+    <configuration name="Program" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.Program" />
+      <module name="rpr-zadaca1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-zadaca1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.BoardTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BoardTest.isCheck1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-zadaca1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.BoardTest" />
+      <option name="METHOD_NAME" value="isCheck1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-zadaca1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.KingTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="KnightTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rpr-zadaca1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ba.unsa.etf.rpr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ba.unsa.etf.rpr" />
+      <option name="MAIN_CLASS_NAME" value="ba.unsa.etf.rpr.KnightTest" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.KingTest" />
+      <item itemvalue="JUnit.BoardTest" />
+      <item itemvalue="JUnit.KnightTest" />
+      <item itemvalue="JUnit.BoardTest.isCheck1" />
+      <item itemvalue="Application.Program" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Program" />
+        <item itemvalue="JUnit.BoardTest" />
+        <item itemvalue="JUnit.BoardTest.isCheck1" />
+        <item itemvalue="JUnit.KingTest" />
+        <item itemvalue="JUnit.KnightTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ac0f4174-d99e-4783-a22d-5c35be10275a" name="Default Changelist" comment="" />
+      <created>1541419475925</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1541419475925</updated>
+      <workItem from="1541419477104" duration="2243000" />
+      <workItem from="1541422255839" duration="2662000" />
+      <workItem from="1541443397734" duration="6920000" />
+      <workItem from="1541575534825" duration="8183000" />
+      <workItem from="1541601721721" duration="11000" />
+      <workItem from="1541622799330" duration="20000" />
+      <workItem from="1541629677950" duration="6095000" />
+      <workItem from="1541688926257" duration="25093000" />
+      <workItem from="1541747410246" duration="12227000" />
+    </task>
+    <task id="LOCAL-00001" summary="Implementirane klase ChessPiece, King i dodana klasa Queen">
+      <created>1541445038358</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1541445038358</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Implementirana klasa Queen">
+      <created>1541445770275</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1541445770275</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Dodana klasa Rook">
+      <created>1541446593356</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1541446593356</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Dodana klasa Bishop">
+      <created>1541447568489</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1541447568489</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Dodana klasa Knight">
+      <created>1541452686568</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1541452686568</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Dodana klasa Pawn">
+      <created>1541576756643</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1541576756643</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Dodana klasa za izuzetke">
+      <created>1541577899564</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1541577899564</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Dodan konstruktor">
+      <created>1541582301155</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1541582301155</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ispravljen konstruktor">
+      <created>1541584054609</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1541584054609</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ispravljeno da se kralj moze kretati i dijagonalno">
+      <created>1541631372961</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1541631372961</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Dodana metoda move u klasu Board, nije jos uvijek zavrsena">
+      <created>1541635900330</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1541635900330</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Implementirana metoda move">
+      <created>1541706510812</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1541706510812</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Implementirana druga metoda move">
+      <created>1541708601474</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1541708601474</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="BoardTest - 2018.11.09 at 10h 16m 43s.xml">
+      <configuration name="BoardTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2018.11.09 at 10h 16m 59s.xml">
+      <configuration name="BoardTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest_isCheck1 - 2018.11.09 at 10h 17m 09s.xml">
+      <configuration name="BoardTest.isCheck1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest_isCheck1 - 2018.11.09 at 10h 17m 31s.xml">
+      <configuration name="BoardTest.isCheck1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest_isCheck1 - 2018.11.09 at 10h 17m 49s.xml">
+      <configuration name="BoardTest.isCheck1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2018.11.09 at 10h 18m 11s.xml">
+      <configuration name="BoardTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2018.11.09 at 10h 24m 58s.xml">
+      <configuration name="BoardTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2018.11.09 at 10h 30m 22s.xml">
+      <configuration name="BoardTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2018.11.09 at 10h 41m 43s.xml">
+      <configuration name="BoardTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="BoardTest - 2018.11.09 at 10h 43m 07s.xml">
+      <configuration name="BoardTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="63454000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4992908" visible="true" weight="0.2865772" />
+      <window_info id="Structure" order="1" sideWeight="0.50070924" side_tool="true" weight="0.28255033" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.50070924" side_tool="true" weight="0.28255033" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32907802" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.29503545" />
+      <window_info anchor="bottom" id="Analysis" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4992908" visible="true" weight="0.2865772" />
+      <window_info id="Structure" order="1" sideWeight="0.50070924" side_tool="true" weight="0.28255033" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" sideWeight="0.50070924" side_tool="true" weight="0.28255033" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32907802" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" order="11" weight="0.29503545" />
+      <window_info anchor="bottom" id="Analysis" order="12" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Maven Projects" order="8" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Implementirane klase ChessPiece, King i dodana klasa Queen" />
+    <MESSAGE value="Implementirana klasa Queen" />
+    <MESSAGE value="Dodana klasa Rook" />
+    <MESSAGE value="Dodana klasa Bishop" />
+    <MESSAGE value="Dodana klasa Knight" />
+    <MESSAGE value="Dodana klasa Pawn" />
+    <MESSAGE value="Dodana klasa za izuzetke" />
+    <MESSAGE value="Dodan konstruktor" />
+    <MESSAGE value="Ispravljen konstruktor" />
+    <MESSAGE value="Ispravljeno da se kralj moze kretati i dijagonalno" />
+    <MESSAGE value="Dodana metoda move u klasu Board, nije jos uvijek zavrsena" />
+    <MESSAGE value="Implementirana metoda move" />
+    <MESSAGE value="Implementirana druga metoda move" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementirana druga metoda move" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/test/IllegalChessMoveException.java" />
+    <entry file="file://$PROJECT_DIR$/src/IllegalChessMoveException.java" />
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/IllegalChessMoveException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="27" selection-start-line="5" selection-start-column="27" selection-end-line="5" selection-end-column="27" />
+          <folding>
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#220#221#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/KnightTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/PawnTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Bishop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Rook.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="35" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding>
+            <element signature="e#110#111#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Queen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="35" selection-start-line="13" selection-start-column="35" selection-end-line="13" selection-end-column="35" />
+          <folding>
+            <element signature="e#112#113#0" expanded="true" />
+            <element signature="e#149#150#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/King.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <folding>
+            <element signature="e#111#112#0" expanded="true" />
+            <element signature="e#148#149#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/KingTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="816">
+          <caret line="66" selection-start-line="66" selection-end-line="66" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/ba/unsa/etf/rpr/BoardTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="162" selection-start-line="162" selection-end-line="162" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/ChessPiece.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="46" column="21" selection-start-line="46" selection-start-column="21" selection-end-line="46" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Knight.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
+          <folding>
+            <element signature="e#114#115#0" expanded="true" />
+            <element signature="e#151#152#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Pawn.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#147#148#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Board.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-547">
+          <caret line="249" column="73" selection-start-line="249" selection-start-column="73" selection-end-line="249" selection-end-column="73" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ba/unsa/etf/rpr/Program.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>No facets are configured</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>rpr-zadaca1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

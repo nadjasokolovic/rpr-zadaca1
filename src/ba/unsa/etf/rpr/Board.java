@@ -189,31 +189,25 @@ public class Board {
         figure.add(new Rook("A1", ChessPiece.Color.WHITE));
         figure.add(new Rook("H1", ChessPiece.Color.WHITE));
         char slovo = 'A';
-        int j = 0;
         for(int i = 0; i < 8; i++) {
             String poz = new String();
-            slovo += j;
-            poz += slovo;
-            poz += 7;
+            poz = slovo + Integer.toString(7);
             figure.add(new Pawn(poz, ChessPiece.Color.BLACK));
-            j++;
+            slovo++;
         }
         slovo = 'A';
-        j = 0;
         for(int i = 0; i < 8; i++) {
             String poz = new String();
-            slovo += j;
-            poz += slovo;
-            poz += 2;
+            poz = slovo + Integer.toString(2);
             figure.add(new Pawn(poz, ChessPiece.Color.WHITE));
-            j++;
+            slovo++;
         }
 
     }
 
     public void move(Class type, ChessPiece.Color color, String position) {
         if(!provjeraIspravnosti(position))
-            throw new IllegalArgumentException("Neispravna pozicija");
+            throw new IllegalArgumentException("Illegal move");
         int kraj = 0;
         boolean krajPetlje = false;
         for(ChessPiece jednaFigura : figure) {
@@ -222,34 +216,42 @@ public class Board {
                     //ovdje provjeriti da li je blokira neka, ako blokira ne igramo sa njom nego sa continue preskocimo na sljedecu iteraciju
                     //figura.getPosition() je pocetna pozicija
                     //position je krajnja pozicija
-                    if(!(jednaFigura instanceof Knight || jednaFigura instanceof King) && daLiJeBlokirana(jednaFigura.getPosition(), position, kojiJeSmjerKretanja(jednaFigura.getPosition(), position)))
+                    if(!(jednaFigura instanceof Knight || jednaFigura instanceof King) && daLiJeBlokirana(jednaFigura.getPosition(), position, kojiJeSmjerKretanja(jednaFigura.getPosition(), position))) {
+                        kraj++;
+                        if(kraj == figure.size())
+                            throw new IllegalChessMoveException("Illegal move");
                         continue;
-                    jednaFigura.move(position);
+                    }
+                    //ako je pijun dodati da moze ici lijevo i desno kad jede figuru
+                    if(jednaFigura instanceof Pawn && (kojiJeSmjerKretanja(jednaFigura.getPosition(), position).equals("dijagonalno gore desno") || kojiJeSmjerKretanja(jednaFigura.getPosition(), position).equals("dijagonalno gore lijevo"))
+                            && trebaLiPojestiFiguru(figure, position, color)) {
+                        jednaFigura.setPosition(position);
+                    }
+                    else
+                        jednaFigura.move(position);
                     //provjeriti je li pojela neku figuru
                     if(trebaLiPojestiFiguru(figure, position, color)) {
                         for(ChessPiece f : figure) {
                             if (f.getPosition().equals(position)) {
                                 //provjeriti da li je na ovoj pozicijji figura iste boje
                                 if(f.getColor().equals(color))
-                                    throw new IllegalChessMoveException("Na odredisnoj poziciji je figura iste boje");
+                                    throw new IllegalChessMoveException("Illegal move");
                                 //ako nije iste boje treba je pojesti
                                 figure.remove(f);
                                 krajPetlje = true;
                                 break;
                             }
                         }
+
                     }
                 } catch (IllegalChessMoveException izuzetak) {
                     kraj++;
-                    if(kraj == figure.size() - 1)
-                        throw new IllegalChessMoveException("Nema niti jedna figura za koju je pozicija ispravna");
+                    if(kraj == figure.size())
+                        throw new IllegalChessMoveException("Illegal move");
                     continue;
                 }
             }
             if(krajPetlje) break;
-            kraj++;
-            if(kraj == figure.size() - 1)
-                throw new IllegalChessMoveException("Nema niti jedna figura za koju je pozicija ispravna");
         }
     }
 
@@ -260,7 +262,12 @@ public class Board {
         if(!(figuraNaStarojPoziciji instanceof Knight || figuraNaStarojPoziciji instanceof King) && daLiJeBlokirana(oldPosition, newPosition, kojiJeSmjerKretanja(oldPosition, newPosition)))
             throw new IllegalChessMoveException("Ova figura je blokirana drugim figurama");
         try {
-            figuraNaStarojPoziciji.move(newPosition);
+            if(figuraNaStarojPoziciji instanceof Pawn && (kojiJeSmjerKretanja(figuraNaStarojPoziciji.getPosition(), newPosition).equals("dijagonalno gore desno") || kojiJeSmjerKretanja(figuraNaStarojPoziciji.getPosition(), newPosition).equals("dijagonalno gore lijevo"))
+                    && trebaLiPojestiFiguru(figure, newPosition, figuraNaStarojPoziciji.getColor())) {
+                figuraNaStarojPoziciji.setPosition(newPosition);
+            }
+            else
+                figuraNaStarojPoziciji.move(newPosition);
             //provjeriti je li pojela neku figuru
             if(trebaLiPojestiFiguru(figure, newPosition, figuraNaStarojPoziciji.getColor())) {
                 for(ChessPiece f : figure) {
@@ -280,7 +287,27 @@ public class Board {
 
     }
 
-    public boolean isCheck(Color color) {
-        
+    public boolean isCheck(ChessPiece.Color color) {
+        boolean povratni = false;
+        String pozicijaKralja = new String();
+        for(ChessPiece figura : figure) {
+            if(figura instanceof King && figura.getColor().equals(color)) {
+                pozicijaKralja = figura.getPosition();
+                break;
+            }
+        }
+        for(ChessPiece figura : figure) {
+            try {
+                if(!figura.getColor().equals(color) && !daLiJeBlokirana(figura.getPosition(), pozicijaKralja, kojiJeSmjerKretanja(figura.getPosition(), pozicijaKralja))) {
+                    figura.move(pozicijaKralja);
+                    povratni = true;
+                    break;
+                }
+            }
+            catch(IllegalChessMoveException izuzetak) {
+                continue;
+            }
+        }
+        return povratni;
     }
 }

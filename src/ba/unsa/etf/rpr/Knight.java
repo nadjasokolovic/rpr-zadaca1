@@ -15,7 +15,7 @@ public class Knight extends ChessPiece {
         pomocniThis.toUpperCase();
         //neispravna pozicija za konja
 
-        this.pozicija = position;
+        this.setPosition(position);
     }
 
 }
