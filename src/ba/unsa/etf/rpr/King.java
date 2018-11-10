@@ -19,8 +19,7 @@ public class King extends ChessPiece {
                 throw new IllegalChessMoveException("Kralj se moze kretati samo za jedno mjesto");
         }
         if(pomjeraLiGoreDole(pomocniThis, pomocni)) {
-            if(Character.getNumericValue(pomocni.charAt(1)) < (Character.getNumericValue(pomocniThis.charAt(1)) - 1) || Character.getNumericValue(pomocni.charAt(1)) > (Character.getNumericValue(pomocniThis.charAt(1)) + 1))
-            if(pomocni.charAt(1) < pomocniThis.charAt(0) - 1 || pomocni.charAt(0) > pomocniThis.charAt(0) + 1)
+            if (pomocni.charAt(1) < pomocniThis.charAt(1) - 1 || pomocni.charAt(1) > pomocniThis.charAt(1) + 1)
                 throw new IllegalChessMoveException("Kralj se moze kretati samo za jedno mjesto");
         }
         if(!pomjeraLiGoreDole(pomocniThis, pomocni) && !pomjeraLiLijevoDesno(this.getPosition(), position)) {

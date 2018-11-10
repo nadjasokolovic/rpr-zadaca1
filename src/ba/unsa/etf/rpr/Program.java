@@ -44,7 +44,7 @@ public class Program {
                 System.out.print("White move: ");
                 //unos pozicije
                 String unos = input.nextLine();
-                if (unos.compareTo("X") == 0)
+                if (unos.compareTo("X") == 0 || unos.compareTo("x") == 0)
                     break;
                 color = ChessPiece.Color.WHITE;
                 try {
@@ -57,6 +57,9 @@ public class Program {
                     type = odrediTip(unos);
 
                     ploca.move(type, color, pozicija);
+                    if(ploca.isCheck(ChessPiece.Color.BLACK))
+                        System.out.println("CHECK!!!");
+
                     //kada je bijeli zavrsio potez stavi ga na false. Ako je illegal move onda ostaje true.
                     white = false;
                 } catch (IllegalArgumentException e) {
@@ -65,7 +68,7 @@ public class Program {
             } else {
                 System.out.print("Black move: ");
                 String unos = input.nextLine();
-                if (unos.compareTo("X") == 0)
+                if (unos.compareTo("X") == 0 || unos.compareTo("x") == 0)
                     break;
                 color = ChessPiece.Color.BLACK;
                 try {
@@ -74,7 +77,11 @@ public class Program {
                     else if (unos.length() == 3)
                         pozicija = unos.substring(1);
                     type = odrediTip(unos);
+
                     ploca.move(type, color, pozicija);
+                    if(ploca.isCheck(ChessPiece.Color.WHITE))
+                        System.out.println("CHECK!!!");
+
                     white = true;
                 } catch (IllegalArgumentException e) {
                     System.out.println("Illegal move");

@@ -36,21 +36,25 @@ public class Board {
 
     private String kojiJeSmjerKretanja(String trenutnaPozicija, String odredisnaPozicija) {
         String s = new String();
-        if(trenutnaPozicija.charAt(0) == odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) < Character.getNumericValue(odredisnaPozicija.charAt(1)))
+        int trenutnaBroj = Character.getNumericValue(trenutnaPozicija.charAt(1));
+        int odredisnaBroj = Character.getNumericValue(odredisnaPozicija.charAt(1));
+        char trenutnaSlovo = trenutnaPozicija.charAt(0);
+        char odredisnaSlovo = odredisnaPozicija.charAt(0);
+        if(trenutnaSlovo == odredisnaSlovo && trenutnaBroj < odredisnaBroj)
             s += "gore";
-        else if(trenutnaPozicija.charAt(0) == odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) > Character.getNumericValue(odredisnaPozicija.charAt(1)))
+        else if(trenutnaSlovo == odredisnaSlovo && trenutnaBroj > odredisnaBroj)
             s += "dole";
-        else if(trenutnaPozicija.charAt(0) < odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) < Character.getNumericValue(odredisnaPozicija.charAt(1)))
+        else if(trenutnaSlovo < odredisnaSlovo && trenutnaBroj < odredisnaBroj && (odredisnaSlovo - trenutnaSlovo) == (odredisnaBroj - trenutnaBroj))
             s += "dijagonalno gore desno";
-        else if(trenutnaPozicija.charAt(0) > odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) < Character.getNumericValue(odredisnaPozicija.charAt(1)))
+        else if(trenutnaSlovo > odredisnaSlovo && trenutnaBroj < odredisnaBroj && (trenutnaSlovo - odredisnaSlovo) == (odredisnaBroj - trenutnaBroj))
             s += "dijagonalno gore lijevo";
-        else if(trenutnaPozicija.charAt(0) < odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) > Character.getNumericValue(odredisnaPozicija.charAt(1)))
+        else if(trenutnaSlovo < odredisnaSlovo && trenutnaBroj > odredisnaBroj && (odredisnaSlovo - trenutnaSlovo) == (trenutnaBroj - odredisnaBroj))
             s += "dijagonalno dole desno";
-        else if(trenutnaPozicija.charAt(0) > odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) > Character.getNumericValue(odredisnaPozicija.charAt(1)))
+        else if(trenutnaSlovo > odredisnaSlovo && trenutnaBroj > odredisnaBroj && (trenutnaSlovo - odredisnaSlovo) == (trenutnaBroj - odredisnaBroj))
             s += "dijagonalno dole lijevo";
-        else if(trenutnaPozicija.charAt(0) < odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) == Character.getNumericValue(odredisnaPozicija.charAt(1)))
+        else if(trenutnaSlovo < odredisnaSlovo && trenutnaBroj == odredisnaBroj)
             s += "desno";
-        else if(trenutnaPozicija.charAt(0) > odredisnaPozicija.charAt(0) && Character.getNumericValue(trenutnaPozicija.charAt(1)) == Character.getNumericValue(odredisnaPozicija.charAt(1)))
+        else if(trenutnaSlovo > odredisnaSlovo && trenutnaBroj == odredisnaBroj)
             s += "lijevo";
 
         return s;
@@ -248,7 +252,7 @@ public class Board {
                 } catch (IllegalChessMoveException izuzetak) {
                     kraj++;
                     if(kraj == figure.size())
-                        throw new IllegalChessMoveException("Illegal move");
+                        throw izuzetak;
                     continue;
                 }
             }
@@ -285,6 +289,7 @@ public class Board {
             }
         } catch (IllegalChessMoveException izuzetak) {
             System.out.println(izuzetak.getMessage());
+            throw izuzetak;
         }
 
     }
