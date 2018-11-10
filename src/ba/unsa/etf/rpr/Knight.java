@@ -9,11 +9,16 @@ public class Knight extends ChessPiece {
     public void move(String position) {
         if(!provjeraIspravnostiPozicije(position))
             throw new IllegalArgumentException("Neispravna pozicija");
-        String pomocni = new String(position);
-        pomocni.toUpperCase();
-        String pomocniThis = new String(this.getPosition());
-        pomocniThis.toUpperCase();
+        String pomocni = position.toUpperCase();
+        String pomocniThis = this.getPosition().toUpperCase();
         //neispravna pozicija za konja
+        if(pomjeraLiGoreDole(this.getPosition(), position) || pomjeraLiLijevoDesno(this.getPosition(), position))
+            throw new IllegalChessMoveException("Neiaspravna pozicija");
+        char thisPozSlovo = this.getPosition().charAt(0);
+        int thisPozBroj = Character.getNumericValue(this.getPosition().charAt(1));
+        char pozSlovo = position.charAt(0);
+        int pozBroj = Character.getNumericValue(position.charAt(1));
+        //if()
 
         this.setPosition(position);
     }

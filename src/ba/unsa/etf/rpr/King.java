@@ -10,10 +10,8 @@ public class King extends ChessPiece {
     public void move(String position) {
         if(!provjeraIspravnostiPozicije(position))
             throw new IllegalArgumentException("Neispravna pozicija");
-        String pomocni = new String(position);
-        pomocni.toUpperCase();
-        String pomocniThis = new String(this.getPosition());
-        pomocniThis.toUpperCase();
+        String pomocni = position.toUpperCase();
+        String pomocniThis = this.getPosition().toUpperCase();
         //ako je pozicija neodgovarajuca za kralja
         //1. ako pomjera lijevo-desno
         if(pomjeraLiLijevoDesno(pomocniThis, pomocni)) {

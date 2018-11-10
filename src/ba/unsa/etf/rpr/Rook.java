@@ -9,10 +9,8 @@ public class Rook extends ChessPiece {
     public void move(String position) {
         if(!provjeraIspravnostiPozicije(position))
             throw new IllegalArgumentException("Neispravna pozicija");
-        String pomocni = new String(position);
-        pomocni.toUpperCase();
-        String pomocniThis = new String(this.getPosition());
-        pomocniThis.toUpperCase();
+        String pomocni = position.toUpperCase();
+        String pomocniThis = this.getPosition().toUpperCase();
         //neispravno kretanje je dijagonalno
         if(!pomjeraLiLijevoDesno(pomocniThis, pomocni) && !pomjeraLiGoreDole(pomocniThis, pomocni))
             throw new IllegalChessMoveException("Top se ne moze kretati dijagonalno");

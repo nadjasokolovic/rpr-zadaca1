@@ -9,10 +9,8 @@ public class Bishop extends ChessPiece {
     public void move(String position) {
         if(!provjeraIspravnostiPozicije(position))
             throw new IllegalArgumentException("Neispravna pozicija");
-        String pomocni = new String(position);
-        pomocni.toUpperCase();
-        String pomocniThis = new String(this.getPosition());
-        pomocniThis.toUpperCase();
+        String pomocni = position.toUpperCase();
+        String pomocniThis = this.getPosition().toUpperCase();
         if(pomjeraLiGoreDole(pomocniThis, pomocni) || pomjeraLiLijevoDesno(pomocniThis, pomocni))
             throw new IllegalChessMoveException("Lovac ne ne moze kretati u ovom smjeru");
 
