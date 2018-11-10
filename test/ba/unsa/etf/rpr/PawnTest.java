@@ -12,4 +12,21 @@ class PawnTest {
         );
     }
 
+    @org.junit.jupiter.api.Test
+    void illegalPosition() {
+        Pawn p = new Pawn("d2", ChessPiece.Color.WHITE);
+        assertThrows(
+                IllegalArgumentException.class,
+                ()-> p.move("n9")
+        );
+    }
+
+    @org.junit.jupiter.api.Test
+    void constructor() {
+        assertThrows(
+          IllegalArgumentException.class,
+          ()-> new Pawn("8f", ChessPiece.Color.BLACK)
+        );
+    }
+
 }
