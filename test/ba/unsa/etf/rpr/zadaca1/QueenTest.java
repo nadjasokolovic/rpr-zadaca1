@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.zadaca1;
 
 import static org.junit.jupiter.api.Assertions.*;
 

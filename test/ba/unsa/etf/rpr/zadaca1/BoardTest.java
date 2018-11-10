@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.zadaca1;
 
 import org.junit.jupiter.api.Test;
 
@@ -266,4 +266,36 @@ class BoardTest {
                 }
         );
     }
+
+    @Test
+    void testProvjeraIspravnosti() {
+        Board b = new Board();
+        assertAll(
+                ()-> assertFalse(b.provjeraIspravnosti("M9")),
+                ()-> assertFalse(b.provjeraIspravnosti("6h")),
+                ()-> assertTrue(b.provjeraIspravnosti("b2")),
+                ()-> assertTrue(b.provjeraIspravnosti("a3"))
+        );
+
+    }
+
+    @Test
+    void testSmjerKretanja() {
+        Board b = new Board();
+        assertTrue(b.kojiJeSmjerKretanja("g5", "e3").equals("dijagonalno dole lijevo"));
+    }
+
+    @Test
+    void testSmjerKretanja2() {
+        Board b = new Board();
+        assertTrue(b.kojiJeSmjerKretanja("g5", "e5").equals("lijevo"));
+    }
+
+    //@Test
+    /*void blokiranje() {
+        Board b = new Board();
+        assertFalse(b.daLiJeBlokirana("b5", "b1", "lijevo", Queen.class));
+    }*/
+    //dodati jos jedan isti samo kad nije pijun tip
+
 }

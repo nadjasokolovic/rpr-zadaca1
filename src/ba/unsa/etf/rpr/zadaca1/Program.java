@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.zadaca1;
 
 import java.util.Scanner;
 
@@ -55,6 +55,8 @@ public class Program {
                         pozicija = unos.substring(1);
                     //odredi tip
                     type = odrediTip(unos);
+
+                    ploca.move(Rook.class, ChessPiece.Color.BLACK, "H6");
 
                     ploca.move(type, color, pozicija);
                     if(ploca.isCheck(ChessPiece.Color.BLACK))

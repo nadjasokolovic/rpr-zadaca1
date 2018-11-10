@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.zadaca1;
 
 public class Knight extends ChessPiece {
     public Knight(String pozicija, Color boja) {

@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.zadaca1;
 
 public abstract class ChessPiece {
 
@@ -7,6 +7,7 @@ public abstract class ChessPiece {
     }
     protected  String pozicija;
     protected Color boja;
+
     public ChessPiece(String pozicija, Color boja) {
         boolean prazanString = pozicija.isEmpty();
         if(prazanString)
@@ -49,8 +50,41 @@ public abstract class ChessPiece {
         return true;
     }
 
+    public String kojiJeSmjerKretanja(String odredisnaPozicija) {
+        String s = "";
+        int trenutnaBroj = Character.getNumericValue(this.getPosition().charAt(1));
+        int odredisnaBroj = Character.getNumericValue(odredisnaPozicija.charAt(1));
+        char trenutnaSlovo = this.getPosition().charAt(0);
+        char odredisnaSlovo = odredisnaPozicija.charAt(0);
+        if(trenutnaSlovo == odredisnaSlovo && trenutnaBroj < odredisnaBroj)
+            s += "gore";
+        else if(trenutnaSlovo == odredisnaSlovo && trenutnaBroj > odredisnaBroj)
+            s += "dole";
+        else if(trenutnaSlovo < odredisnaSlovo && trenutnaBroj < odredisnaBroj && (odredisnaSlovo - trenutnaSlovo) == (odredisnaBroj - trenutnaBroj))
+            s += "dijagonalno gore desno";
+        else if(trenutnaSlovo > odredisnaSlovo && trenutnaBroj < odredisnaBroj && (trenutnaSlovo - odredisnaSlovo) == (odredisnaBroj - trenutnaBroj))
+            s += "dijagonalno gore lijevo";
+        else if(trenutnaSlovo < odredisnaSlovo && trenutnaBroj > odredisnaBroj && (odredisnaSlovo - trenutnaSlovo) == (trenutnaBroj - odredisnaBroj))
+            s += "dijagonalno dole desno";
+        else if(trenutnaSlovo > odredisnaSlovo && trenutnaBroj > odredisnaBroj && (trenutnaSlovo - odredisnaSlovo) == (trenutnaBroj - odredisnaBroj))
+            s += "dijagonalno dole lijevo";
+        else if(trenutnaSlovo < odredisnaSlovo && trenutnaBroj == odredisnaBroj)
+            s += "desno";
+        else if(trenutnaSlovo > odredisnaSlovo && trenutnaBroj == odredisnaBroj)
+            s += "lijevo";
+
+        return s;
+    }
+
+
     public String getPosition() { return this.pozicija; }
-    public void setPosition(String position) { this.pozicija = position; }
+
+    public void setPosition(String position) {
+        if(!provjeraIspravnostiPozicije(position))
+            throw new IllegalArgumentException("Neispravna pozicija");
+        this.pozicija = position;
+    }
+
     public Color getColor() { return boja; }
     public abstract void move(String position);
 }

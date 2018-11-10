@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.zadaca1;
 
 public class Bishop extends ChessPiece {
     public Bishop(String pozicija, Color boja) {
@@ -11,8 +11,9 @@ public class Bishop extends ChessPiece {
             throw new IllegalArgumentException("Neispravna pozicija");
         String pomocni = position.toUpperCase();
         String pomocniThis = this.getPosition().toUpperCase();
-        if(pomjeraLiGoreDole(pomocniThis, pomocni) || pomjeraLiLijevoDesno(pomocniThis, pomocni))
-            throw new IllegalChessMoveException("Lovac ne ne moze kretati u ovom smjeru");
+        String smjer = this.kojiJeSmjerKretanja(position);
+        if(!smjer.contains("dijagonalno"))
+            throw new IllegalChessMoveException("Lovac se ne može kretiati u zadanom smjeru");
 
         this.pozicija = position;
     }

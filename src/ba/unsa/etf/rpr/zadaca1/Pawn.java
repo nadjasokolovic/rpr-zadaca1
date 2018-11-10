@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.zadaca1;
 
 public class Pawn extends ChessPiece {
     public Pawn(String pozicija, Color boja) {
@@ -23,4 +23,6 @@ public class Pawn extends ChessPiece {
         //provjeriti sta za prvi potez i kad jede
         this.pozicija = position;
     }
+
+
 }

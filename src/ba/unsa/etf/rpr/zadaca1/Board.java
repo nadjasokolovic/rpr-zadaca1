@@ -1,4 +1,4 @@
-package ba.unsa.etf.rpr;
+package ba.unsa.etf.rpr.zadaca1;
 
 import java.util.*;
 
@@ -18,7 +18,7 @@ public class Board {
         return true;
     }
 
-    private boolean trebaLiPojestiFiguru(ArrayList<ChessPiece> figure, String pozicija, ChessPiece.Color boja) {
+    public boolean trebaLiPojestiFiguru(ArrayList<ChessPiece> figure, String pozicija, ChessPiece.Color boja) {
         for(ChessPiece jednaFigura : figure) {
             if(jednaFigura.getPosition().equals(pozicija) && !jednaFigura.getColor().equals(boja))
                 return true;
@@ -26,7 +26,7 @@ public class Board {
         return false;
     }
 
-    private boolean imaLiFiguraNaPoziciji(String position) {
+    public boolean imaLiFiguraNaPoziciji(String position) {
         for(ChessPiece f : figure) {
             if(f.getPosition().equals(position))
                 return true;
@@ -34,7 +34,7 @@ public class Board {
         return false;
     }
 
-    private String kojiJeSmjerKretanja(String trenutnaPozicija, String odredisnaPozicija) {
+    public String kojiJeSmjerKretanja(String trenutnaPozicija, String odredisnaPozicija) {
         String s = new String();
         int trenutnaBroj = Character.getNumericValue(trenutnaPozicija.charAt(1));
         int odredisnaBroj = Character.getNumericValue(odredisnaPozicija.charAt(1));
@@ -60,11 +60,20 @@ public class Board {
         return s;
     }
 
-    private boolean daLiJeBlokirana(String pocetnaPozicija, String odredisnaPozicija, String smjer) {
+    public boolean daLiJeBlokirana(String pocetnaPozicija, String odredisnaPozicija, String smjer, Class type) {
         char pocetnaSlovo = pocetnaPozicija.charAt(0);
         int pocetnaBroj = Character.getNumericValue(pocetnaPozicija.charAt(1));
         char odredisnaSlovo = odredisnaPozicija.charAt(0);
         int odredisnaBroj = Character.getNumericValue(odredisnaPozicija.charAt(1));
+
+        if(type == Pawn.class) {
+            String pozicijaGore = pocetnaSlovo + Integer.toString(pocetnaBroj + 1);
+            String pozicijaDole = pocetnaSlovo + Integer.toString(pocetnaBroj - 1);
+            if(smjer.equals("gore") && imaLiFiguraNaPoziciji(pozicijaGore))
+                return true;
+            else if(smjer.equals("dole") && imaLiFiguraNaPoziciji(pozicijaDole))
+                return true;
+        }
 
         if(smjer.equals("gore")) {
             pocetnaBroj += 1;
@@ -162,15 +171,15 @@ public class Board {
                 pocetnaBroj--;
             }
         }
-        return  false;
+        return smjer.equals("");
     }
 
     public Board() {
         figure = new ArrayList<>();
-        figure.add(new King("D8", ChessPiece.Color.BLACK));
-        figure.add(new King("D1", ChessPiece.Color.WHITE));
-        figure.add(new Queen("E8", ChessPiece.Color.BLACK));
-        figure.add(new Queen("E1", ChessPiece.Color.WHITE));
+        figure.add(new Queen("D8", ChessPiece.Color.BLACK));
+        figure.add(new Queen("D1", ChessPiece.Color.WHITE));
+        figure.add(new King("E8", ChessPiece.Color.BLACK));
+        figure.add(new King("E1", ChessPiece.Color.WHITE));
         figure.add(new Bishop("C8", ChessPiece.Color.BLACK));
         figure.add(new Bishop("F8", ChessPiece.Color.BLACK));
         figure.add(new Bishop("C1", ChessPiece.Color.WHITE));
@@ -221,7 +230,7 @@ public class Board {
                     //ovdje provjeriti da li je blokira neka, ako blokira ne igramo sa njom nego sa continue preskocimo na sljedecu iteraciju
                     //jednaFigura.getPosition() je pocetna pozicija
                     //position je krajnja pozicija
-                    if(!(jednaFigura instanceof Knight || jednaFigura instanceof King) && daLiJeBlokirana(jednaFigura.getPosition(), position, kojiJeSmjerKretanja(jednaFigura.getPosition(), position))) {
+                    if(!(jednaFigura instanceof Knight || jednaFigura instanceof King) && daLiJeBlokirana(jednaFigura.getPosition(), position, kojiJeSmjerKretanja(jednaFigura.getPosition(), position), type)) {
                         kraj++;
                         if(kraj == figure.size())
                             throw new IllegalChessMoveException("Illegal move");
@@ -230,6 +239,7 @@ public class Board {
                     //ako je pijun dodati da moze ici lijevo i desno kad jede figuru
                     if(jednaFigura instanceof Pawn && (kojiJeSmjerKretanja(jednaFigura.getPosition(), position).equals("dijagonalno gore desno") || kojiJeSmjerKretanja(jednaFigura.getPosition(), position).equals("dijagonalno gore lijevo"))
                             && trebaLiPojestiFiguru(figure, position, color)) {
+
                         jednaFigura.setPosition(position);
                     }
                     else
@@ -265,7 +275,7 @@ public class Board {
             throw new IllegalArgumentException("Na ovoj poziciji nema figure");
         ChessPiece figuraNaStarojPoziciji = getFiguruNaPoziciji(oldPosition);
         if(!(figuraNaStarojPoziciji instanceof Knight || figuraNaStarojPoziciji instanceof King) &&
-                daLiJeBlokirana(oldPosition, newPosition, kojiJeSmjerKretanja(oldPosition, newPosition)))
+                daLiJeBlokirana(oldPosition, newPosition, kojiJeSmjerKretanja(oldPosition, newPosition), figuraNaStarojPoziciji.getClass()))
             throw new IllegalChessMoveException("Ova figura je blokirana drugim figurama");
         try {
             if(figuraNaStarojPoziciji instanceof Pawn && (kojiJeSmjerKretanja(figuraNaStarojPoziciji.getPosition(), newPosition).equals("dijagonalno gore desno") || kojiJeSmjerKretanja(figuraNaStarojPoziciji.getPosition(), newPosition).equals("dijagonalno gore lijevo"))
@@ -296,25 +306,38 @@ public class Board {
 
     public boolean isCheck(ChessPiece.Color color) {
         boolean povratni = false;
-        String pozicijaKralja = new String();
+        String pozicijaKralja = null;
+        //pronalazak pozicije kralja
         for(ChessPiece figura : figure) {
             if(figura instanceof King && figura.getColor().equals(color)) {
                 pozicijaKralja = figura.getPosition();
                 break;
             }
         }
+        //provjera da li postoji figura koja može doći na poziciju kralja
         for(ChessPiece figura : figure) {
             try {
-                if(!figura.getColor().equals(color) && !daLiJeBlokirana(figura.getPosition(), pozicijaKralja, kojiJeSmjerKretanja(figura.getPosition(), pozicijaKralja))) {
+                boolean blokirana = daLiJeBlokirana(figura.getPosition(), pozicijaKralja, kojiJeSmjerKretanja(figura.getPosition(), pozicijaKralja), figura.getClass());
+                //figura suprotne boje, nije blokirana i nije sam kralj poslane boje
+                if(!figura.getColor().equals(color) && !blokirana && !figura.getPosition().equals(pozicijaKralja)) {
+                    String pozicijaFigure = figura.getPosition();
+                    if(figura instanceof Pawn) {
+                        String smjer = kojiJeSmjerKretanja(figura.getPosition(), pozicijaKralja);
+                        boolean pojestiFiguru = trebaLiPojestiFiguru(figure, pozicijaKralja, figura.getColor());
+                        if (smjer.contains("dijagonalno") && pojestiFiguru)
+                            return true;
+                    }
+
                     figura.move(pozicijaKralja);
-                    povratni = true;
-                    break;
+                    // ako ne baci izuzetak znaci treba je vratiti na staru poziciju
+                    figura.setPosition(pozicijaFigure);
+                    return true;
                 }
             }
             catch(IllegalChessMoveException izuzetak) {
                 //continue;
             }
         }
-        return povratni;
+        return false;
     }
 }
