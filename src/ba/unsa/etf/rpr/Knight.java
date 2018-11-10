@@ -14,11 +14,15 @@ public class Knight extends ChessPiece {
         //neispravna pozicija za konja
         if(pomjeraLiGoreDole(this.getPosition(), position) || pomjeraLiLijevoDesno(this.getPosition(), position))
             throw new IllegalChessMoveException("Neiaspravna pozicija");
-        char thisPozSlovo = this.getPosition().charAt(0);
+        char thisPozSlovo = pomocniThis.charAt(0);
         int thisPozBroj = Character.getNumericValue(this.getPosition().charAt(1));
-        char pozSlovo = position.charAt(0);
+        char pozSlovo = pomocni.charAt(0);
         int pozBroj = Character.getNumericValue(position.charAt(1));
-        //if()
+        if((pozSlovo != thisPozSlovo - 1 || pozBroj != thisPozBroj + 2) && (pozSlovo != thisPozSlovo - 2 || pozBroj != thisPozBroj + 1)
+           && (pozSlovo != thisPozSlovo - 2 || pozBroj != thisPozBroj - 1) && (pozSlovo != thisPozSlovo - 1 || pozBroj != thisPozBroj - 2)
+           && (pozSlovo != thisPozSlovo + 1 || pozBroj != thisPozBroj - 2) && (pozSlovo != thisPozSlovo + 2 || pozBroj != thisPozBroj - 1)
+           && (pozSlovo != thisPozSlovo + 2 || pozBroj != thisPozBroj + 1) && (pozSlovo != thisPozSlovo + 1 || pozBroj != thisPozBroj + 2))
+            throw new IllegalChessMoveException("Neispravna pozicija");
 
         this.setPosition(position);
     }

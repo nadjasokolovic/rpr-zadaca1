@@ -11,7 +11,8 @@ public abstract class ChessPiece {
         boolean prazanString = pozicija.isEmpty();
         if(prazanString)
             throw new IllegalArgumentException("Izuzetak");
-        if(!(pozicija.charAt(0) >= 'A' && pozicija.charAt(0) <= 'H') || !(Character.getNumericValue(pozicija.charAt(1)) >= 1 && Character.getNumericValue(pozicija.charAt(1)) <= 8))
+        String pomocni = pozicija.toUpperCase();
+        if(!(pomocni.charAt(0) >= 'A' && pomocni.charAt(0) <= 'H') || !(Character.getNumericValue(pomocni.charAt(1)) >= 1 && Character.getNumericValue(pomocni.charAt(1)) <= 8))
             throw new IllegalArgumentException("Neispravni parametri");
 
         this.pozicija = pozicija;
